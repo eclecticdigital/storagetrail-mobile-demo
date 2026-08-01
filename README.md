@@ -39,7 +39,7 @@ existing StorageTrail brand:
 | Border grey | `#d2d8e3` | input and card borders |
 | Heading font | Manrope | loaded by the live site |
 | Body font | Geist | loaded by the live site |
-| Logo | actual `logo.png` from the live site | storagetrail.com |
+| Logo | vector lockup recreated to match the brand mark | crisp at any size, no raster box |
 
 ## What is interactive
 
@@ -58,18 +58,10 @@ functionality" is the core requirement of this project:
 
 ## How this maps to the production build
 
-The live site is **WordPress** running the **Bricks** theme with a `bricks-child` child theme, plus
-these relevant plugins:
-
-- `storagetrail-listings` — the listings engine behind the Listings page
-- `stlys-list-space` — the List Your Space flow
-- `contact-form-7` with `cf7-redirection` and a drag-and-drop upload addon
-- `max-addons-for-bricks`
-
-That means the production implementation restyles the existing plugin output rather than rebuilding
-it. All custom CSS and template overrides belong in **`bricks-child`**, so plugin and theme updates
-never wipe the styling, and the search, filters, and backend integrations keep running on exactly
-the code path they use today.
+In production, the implementation restyles the pages the site already renders rather than
+rebuilding them from scratch. Search, filters, form submissions, and backend integrations keep
+running on exactly the same code path they use today, and the styling lives where site updates
+cannot wipe it out.
 
 ## Notes
 

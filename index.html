@@ -10,7 +10,7 @@
 <meta property="og:description" content="Mobile redesign implementation built from the approved mockup.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://eclecticdigital.github.io/storagetrail-mobile-demo/assets/img/hero.webp">
-<link rel="icon" href="assets/img/logo.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%23e87722'/%3E%3Crect x='10' y='11' width='24' height='22' rx='2.5' fill='%23fff'/%3E%3Crect x='13' y='16' width='18' height='2.6' rx='1.3' fill='%23e87722'/%3E%3Crect x='13' y='21' width='18' height='2.6' rx='1.3' fill='%23e87722'/%3E%3Crect x='13' y='26' width='18' height='2.6' rx='1.3' fill='%23e87722'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +28,14 @@
 <header class="hdr">
   <div class="hdr__in">
     <a class="hdr__logo" href="#top" aria-label="StorageTrail home">
-      <img src="assets/img/logo.png" alt="StorageTrail" width="184" height="44">
+      <svg class="hdr__mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="10" fill="#e87722"/>
+        <rect x="10" y="11" width="24" height="22" rx="2.5" fill="#fff"/>
+        <rect x="13" y="16" width="18" height="2.6" rx="1.3" fill="#e87722"/>
+        <rect x="13" y="21" width="18" height="2.6" rx="1.3" fill="#e87722"/>
+        <rect x="13" y="26" width="18" height="2.6" rx="1.3" fill="#e87722"/>
+      </svg>
+      <span class="hdr__word">Storage<b>Trail</b></span>
     </a>
     <div class="hdr__actions">
       <button class="icon-btn icon-btn--ghost" id="headerSearchBtn" aria-label="Search listings">
@@ -64,7 +71,7 @@
   <div class="wrap">
     <section class="stats" aria-label="StorageTrail at a glance">
       <div class="stat">
-        <span class="stat__ic stat__ic--navy">
+        <span class="stat__ic stat__ic--brand">
           <svg viewBox="0 0 24 24" class="ic"><path d="M4 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M2 21h20"/></svg>
         </span>
         <b class="stat__v">100+</b>
@@ -88,7 +95,7 @@
         <span class="stat__s">Parking to warehouses</span>
       </div>
       <div class="stat">
-        <span class="stat__ic stat__ic--navy">
+        <span class="stat__ic stat__ic--brand">
           <svg viewBox="0 0 24 24" class="ic"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M17 11.2A3 3 0 0 0 17 5.4"/><path d="M18.6 20c0-2.5-.8-4.3-2.2-5.4"/></svg>
         </span>
         <b class="stat__v">Thousands</b>
@@ -202,7 +209,7 @@
       <article class="card" data-type="parking" data-price="30" data-added="8" data-instant="0" data-setting="outdoor"
                data-hay="maumee st truck parking tecumseh mi michigan truck parking outdoor">
         <div class="card__media">
-          <img src="assets/img/truck-parking.webp" alt="Aerial view of semi trucks parked in marked bays" width="760" height="520" loading="lazy" decoding="async">
+          <img src="assets/img/truck-parking.webp" alt="Row of semi trucks parked in a storage yard" width="760" height="520" loading="lazy" decoding="async">
           <span class="pill pill--avail"><i class="dot"></i>Available Today</span>
           <button class="fav" aria-label="Save Maumee St. Truck Parking" aria-pressed="false">
             <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>

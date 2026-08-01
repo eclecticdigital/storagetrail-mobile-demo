@@ -69,7 +69,7 @@ button{cursor:pointer;border:0;background:none}
 .wrap{width:100%;max-width:480px;margin-inline:auto;padding-inline:var(--gut)}
 
 /* Shared icon sizing — all inline SVGs are stroked line icons */
-.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;
     stroke-linecap:round;stroke-linejoin:round}
 
 /* ---------- demo strip ---------- */
@@ -88,10 +88,14 @@ button{cursor:pointer;border:0;background:none}
 .hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line-soft)}
 .hdr__in{max-width:480px;margin-inline:auto;padding:10px var(--gut);
   display:flex;align-items:center;justify-content:space-between;gap:12px}
-.hdr__logo img{height:30px;width:auto}
+.hdr__logo{display:flex;align-items:center;gap:9px}
+.hdr__mark{width:33px;height:33px;flex:none;display:block}
+.hdr__word{font-family:var(--font-h);font-weight:800;font-size:19px;letter-spacing:-.03em;
+  color:var(--navy);line-height:1;white-space:nowrap}
+.hdr__word b{color:var(--brand);font-weight:800}
 .hdr__actions{display:flex;align-items:center;gap:9px}
 
-.icon-btn{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+.icon-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
   transition:background .18s,transform .18s}
 .icon-btn:active{transform:scale(.94)}
 .icon-btn--ghost{background:var(--bg-soft);color:var(--navy);border:1px solid var(--line-soft)}
@@ -182,9 +186,9 @@ button{cursor:pointer;border:0;background:none}
 .chip .ic{width:15px;height:15px;color:var(--muted);transition:color .18s}
 .chip:active{transform:scale(.96)}
 .chip:hover{border-color:#b9c4d4}
-.chip.is-on{background:var(--brand);border-color:var(--brand);color:#fff;
-  box-shadow:0 2px 8px rgba(232,119,34,.3)}
-.chip.is-on .ic{color:#fff}
+.chip.is-on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand);
+  box-shadow:none}
+.chip.is-on .ic{color:var(--brand)}
 .chip--toggle[aria-expanded="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
 .chip--toggle[aria-expanded="true"] .ic{color:#fff}
 
@@ -237,7 +241,7 @@ button{cursor:pointer;border:0;background:none}
   padding:5px 9px;border-radius:999px;box-shadow:var(--sh-sm);
 }
 .pill .ic{width:12px;height:12px}
-.pill--avail{top:10px;left:10px;background:var(--green-soft);color:#0f7a37;border:1px solid #bfe8cf}
+.pill--avail{top:10px;left:10px;background:#fff;color:var(--navy);border:0}
 .pill--avail .dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:block}
 .pill--feat{bottom:10px;left:10px;background:var(--brand);color:#fff}
 .pill--feat .ic{fill:#fff;stroke-width:1.2}
@@ -264,7 +268,7 @@ button{cursor:pointer;border:0;background:none}
 .card__meta i{font-style:normal;margin:0 5px;color:#b6c0cd}
 .card__foot{margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft);
   display:flex;align-items:center;justify-content:space-between;gap:10px}
-.price b{font-family:var(--font-h);font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.price b{font-family:var(--font-h);font-size:20px;font-weight:800;color:var(--brand-2);letter-spacing:-.02em}
 .price span{font-size:12px;color:var(--muted);margin-left:2px}
 
 /* ---------- buttons ---------- */
