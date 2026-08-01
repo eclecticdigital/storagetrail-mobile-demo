@@ -112,13 +112,18 @@ button{cursor:pointer;border:0;background:none}
 
 /* ---------- hero ---------- */
 .hero{position:relative;isolation:isolate;padding:34px 0 66px;overflow:hidden}
-.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:50% 0%;transform:scaleX(-1);z-index:-2}
 .hero__scrim{position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(3,26,49,.86) 0%,rgba(3,26,49,.68) 45%,rgba(3,26,49,.82) 100%)}
+  background:
+    linear-gradient(100deg,rgba(3,26,49,.62) 0%,rgba(3,26,49,.3) 45%,rgba(3,26,49,.02) 80%),
+    linear-gradient(180deg,rgba(3,26,49,0) 55%,rgba(3,26,49,.42) 100%)}
 .hero__in{position:relative}
-.hero__h1{color:#fff;font-size:clamp(30px,8.6vw,38px);font-weight:800;letter-spacing:-.03em}
+.hero__h1{color:#fff;font-size:clamp(30px,8.6vw,38px);font-weight:800;letter-spacing:-.03em;
+  text-shadow:0 2px 16px rgba(3,26,49,.65)}
 .hero__h1 .accent{color:var(--brand)}
-.hero__sub{color:#c9d7e5;margin-top:10px;font-size:14.5px;max-width:31ch}
+.hero__sub{color:#dde8f2;margin-top:10px;font-size:14.5px;max-width:31ch;
+  text-shadow:0 1px 10px rgba(3,26,49,.7)}
 
 /* ---------- stats ---------- */
 .stats{
