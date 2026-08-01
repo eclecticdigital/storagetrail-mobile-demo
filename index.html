@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Browse Storage Nationwide | StorageTrail</title>
+<meta name="description" content="Find the perfect space for your RV, boat, equipment, vehicle, or business. Browse verified storage listings across 35 states on StorageTrail.">
+<meta name="theme-color" content="#0a1e32">
+<meta property="og:title" content="Browse Storage Nationwide | StorageTrail">
+<meta property="og:description" content="Mobile redesign implementation built from the approved mockup.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://eclecticdigital.github.io/storagetrail-mobile-demo/assets/img/hero.webp">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- Demo framing strip (scrolls away, dismissible) -->
+<div class="demo-strip" id="demoStrip">
+  <span><b>Mobile redesign demo</b> &middot; built from your approved Listings mockup</span>
+  <button class="demo-strip__x" id="demoStripX" aria-label="Dismiss demo notice">&times;</button>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="hdr__logo" href="#top" aria-label="StorageTrail home">
+      <img src="assets/img/logo.png" alt="StorageTrail" width="184" height="44">
+    </a>
+    <div class="hdr__actions">
+      <button class="icon-btn icon-btn--ghost" id="headerSearchBtn" aria-label="Search listings">
+        <svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      </button>
+      <button class="icon-btn icon-btn--brand" id="navBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="navpanel" id="navPanel" hidden>
+    <a href="#listings">Browse Storage</a>
+    <a href="#cta">List Your Property</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a class="navpanel__cta" href="#cta">List Your Property Free</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <img class="hero__bg" src="assets/img/hero.webp" alt="" width="1000" height="1100" fetchpriority="high">
+    <div class="hero__scrim"></div>
+    <div class="wrap hero__in">
+      <h1 class="hero__h1">Browse Storage<br><span class="accent">Nationwide</span></h1>
+      <p class="hero__sub">Find the perfect space for your RV, boat, equipment, vehicle, or business.</p>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="wrap">
+    <section class="stats" aria-label="StorageTrail at a glance">
+      <div class="stat">
+        <span class="stat__ic stat__ic--navy">
+          <svg viewBox="0 0 24 24" class="ic"><path d="M4 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M2 21h20"/></svg>
+        </span>
+        <b class="stat__v">100+</b>
+        <span class="stat__l">Active Listings</span>
+        <span class="stat__s">Updated daily</span>
+      </div>
+      <div class="stat">
+        <span class="stat__ic stat__ic--brand">
+          <svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        </span>
+        <b class="stat__v">35</b>
+        <span class="stat__l">States</span>
+        <span class="stat__s">Covered</span>
+      </div>
+      <div class="stat">
+        <span class="stat__ic stat__ic--brand">
+          <svg viewBox="0 0 24 24" class="ic"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>
+        </span>
+        <b class="stat__v">12+</b>
+        <span class="stat__l">Property Types</span>
+        <span class="stat__s">Parking to warehouses</span>
+      </div>
+      <div class="stat">
+        <span class="stat__ic stat__ic--navy">
+          <svg viewBox="0 0 24 24" class="ic"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M17 11.2A3 3 0 0 0 17 5.4"/><path d="M18.6 20c0-2.5-.8-4.3-2.2-5.4"/></svg>
+        </span>
+        <b class="stat__v">Thousands</b>
+        <span class="stat__l">Of Renters</span>
+        <span class="stat__s">Searching daily</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ SEARCH + FILTER BAR ============ -->
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="toolbar__search">
+        <svg viewBox="0 0 24 24" class="ic toolbar__searchic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input id="q" type="search" placeholder="Search city, state, or ZIP code" aria-label="Search city, state, or ZIP code" autocomplete="off">
+        <button class="toolbar__clear" id="qClear" hidden aria-label="Clear search">&times;</button>
+      </div>
+      <button class="toolbar__btn" id="filtersBtn" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        <span>Filters</span>
+        <span class="toolbar__dot" id="filtersDot" hidden></span>
+      </button>
+      <button class="toolbar__btn" id="mapBtn" aria-pressed="false">
+        <svg viewBox="0 0 24 24" class="ic"><path d="m9 4 6 2 5.2-1.7a.6.6 0 0 1 .8.6v12.3l-6 2-6-2-5.2 1.7a.6.6 0 0 1-.8-.6V6.1L9 4Z"/><path d="M9 4v14M15 6v14"/></svg>
+        <span>Map</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ CATEGORY CHIPS ============ -->
+  <div class="chips" role="tablist" aria-label="Filter by property type">
+    <div class="chips__track" id="chips">
+      <button class="chip is-on" data-type="all" role="tab" aria-selected="true">
+        <svg viewBox="0 0 24 24" class="ic"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg>
+        <span>All</span>
+      </button>
+      <button class="chip" data-type="parking" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M4 16.5h16M6.5 16.5V19M17.5 16.5V19"/><path d="M5 16.5v-3.2l1.8-4.6A2 2 0 0 1 8.7 7.4h6.6a2 2 0 0 1 1.9 1.3l1.8 4.6v3.2"/><circle cx="7.8" cy="13.6" r="1"/><circle cx="16.2" cy="13.6" r="1"/></svg>
+        <span>Parking</span>
+      </button>
+      <button class="chip" data-type="rv" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M2.6 16.4V8.2a1.6 1.6 0 0 1 1.6-1.6h11.4l4.8 4.4v5.4"/><path d="M2.6 16.4h18.8"/><circle cx="7.4" cy="17.8" r="1.9"/><circle cx="16.6" cy="17.8" r="1.9"/><path d="M6 9.4h4.4v3H6z"/></svg>
+        <span>RV Storage</span>
+      </button>
+      <button class="chip" data-type="warehouse" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M3 20V9.4l9-4.4 9 4.4V20"/><path d="M3 20h18"/><path d="M8 20v-6.4h8V20"/></svg>
+        <span>Warehouse</span>
+      </button>
+      <button class="chip" data-type="boat" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M4 14.6h16l-2.4 4.2a2 2 0 0 1-1.7 1H8.1a2 2 0 0 1-1.7-1L4 14.6Z"/><path d="M6.4 14.6V7.2l9.4 3.1-2 4.3"/><path d="M12 4v3.6"/></svg>
+        <span>Boat Storage</span>
+      </button>
+      <button class="chip chip--more" data-type="container" role="tab" aria-selected="false" hidden>
+        <svg viewBox="0 0 24 24" class="ic"><rect x="3" y="6.5" width="18" height="11" rx="1.4"/><path d="M7.5 6.5v11M12 6.5v11M16.5 6.5v11"/></svg>
+        <span>Container</span>
+      </button>
+      <button class="chip chip--more" data-type="self" role="tab" aria-selected="false" hidden>
+        <svg viewBox="0 0 24 24" class="ic"><rect x="3.4" y="4.6" width="17.2" height="14.8" rx="1.6"/><path d="M3.4 9.2h17.2M7.6 13.4h3.2"/></svg>
+        <span>Self Storage</span>
+      </button>
+      <button class="chip chip--toggle" id="moreChip" aria-expanded="false">
+        <svg viewBox="0 0 24 24" class="ic"><circle cx="6" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18" cy="12" r="1.3"/></svg>
+        <span>More</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ MAP PANEL ============ -->
+  <div class="wrap">
+    <section class="mappanel" id="mapPanel" hidden aria-label="Map view">
+      <div class="mappanel__canvas">
+        <svg class="mappanel__grid" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true">
+          <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0v40" fill="none" stroke="#d2d8e3" stroke-width="1"/>
+          </pattern></defs>
+          <rect width="400" height="220" fill="#eef2f7"/>
+          <rect width="400" height="220" fill="url(#g)"/>
+          <path d="M0 150 Q110 118 200 140 T400 116" fill="none" stroke="#c3ccdb" stroke-width="7"/>
+          <path d="M150 0 Q168 90 140 220" fill="none" stroke="#c3ccdb" stroke-width="6"/>
+        </svg>
+        <div class="mappanel__pins" id="mapPins"></div>
+      </div>
+      <p class="mappanel__note">
+        Map preview. In the live build this binds to your existing map provider and the same filtered result set shown below.
+      </p>
+    </section>
+  </div>
+
+  <!-- ============ RESULTS HEAD ============ -->
+  <div class="wrap">
+    <div class="reshead">
+      <div>
+        <h2 class="reshead__h">All Storage Spaces</h2>
+        <p class="reshead__c"><span id="count">8</span> spaces available</p>
+      </div>
+      <div class="sortwrap">
+        <select id="sort" aria-label="Sort listings">
+          <option value="new">Newest First</option>
+          <option value="lo">Price: Low to High</option>
+          <option value="hi">Price: High to Low</option>
+        </select>
+        <svg viewBox="0 0 24 24" class="ic sortwrap__chev"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LISTINGS ============ -->
+  <div class="wrap">
+    <section class="grid" id="listings" aria-live="polite">
+
+      <article class="card" data-type="parking" data-price="30" data-added="8" data-instant="0" data-setting="outdoor"
+               data-hay="maumee st truck parking tecumseh mi michigan truck parking outdoor">
+        <div class="card__media">
+          <img src="assets/img/truck-parking.webp" alt="Aerial view of semi trucks parked in marked bays" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available Today</span>
+          <button class="fav" aria-label="Save Maumee St. Truck Parking" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--feat"><svg viewBox="0 0 24 24" class="ic"><path d="m12 4 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4Z"/></svg>Featured</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Truck Parking</span>
+          <h3 class="card__t">Maumee St. Truck Parking</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Tecumseh, MI</p>
+          <p class="card__meta">Outdoor <i>&bull;</i> 40,000 sq ft</p>
+          <div class="card__foot">
+            <p class="price"><b>$30</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="warehouse" data-price="450" data-added="7" data-instant="1" data-setting="indoor"
+               data-hay="456 montello st warehouse brockton ma massachusetts indoor">
+        <div class="card__media">
+          <img src="assets/img/warehouse.webp" alt="Aerial view of a distribution warehouse with loading docks" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available</span>
+          <button class="fav" aria-label="Save 456 Montello St. Warehouse" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--instant"><svg viewBox="0 0 24 24" class="ic"><path d="M13 3 5.5 13.2h5L11 21l7.5-10.2h-5L13 3Z"/></svg>Instant Book</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Warehouse</span>
+          <h3 class="card__t">456 Montello St. Warehouse</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Brockton, MA</p>
+          <p class="card__meta">Indoor <i>&bull;</i> 10,000 sq ft</p>
+          <div class="card__foot">
+            <p class="price"><b>$450</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="rv" data-price="85" data-added="6" data-instant="0" data-setting="outdoor"
+               data-hay="rv trailer storage lot williamsport pa pennsylvania outdoor camper">
+        <div class="card__media">
+          <img src="assets/img/rv-storage.webp" alt="Row of recreational vehicles parked in a storage lot" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available Today</span>
+          <button class="fav" aria-label="Save RV &amp; Trailer Storage Lot" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--feat"><svg viewBox="0 0 24 24" class="ic"><path d="m12 4 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4Z"/></svg>Featured</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">RV Storage</span>
+          <h3 class="card__t">RV &amp; Trailer Storage Lot</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Williamsport, PA</p>
+          <p class="card__meta">Outdoor <i>&bull;</i> 2 acres</p>
+          <div class="card__foot">
+            <p class="price"><b>$85</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="boat" data-price="120" data-added="5" data-instant="0" data-setting="outdoor"
+               data-hay="riverside boat marine storage sarasota fl florida outdoor">
+        <div class="card__media">
+          <img src="assets/img/boat-storage.webp" alt="Boats on trailers under covers in a secure storage yard" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available</span>
+          <button class="fav" aria-label="Save Riverside Boat &amp; Marine Storage" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Boat Storage</span>
+          <h3 class="card__t">Riverside Boat &amp; Marine Storage</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Sarasota, FL</p>
+          <p class="card__meta">Outdoor <i>&bull;</i> 1.5 acres</p>
+          <div class="card__foot">
+            <p class="price"><b>$120</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="parking" data-price="65" data-added="4" data-instant="1" data-setting="indoor"
+               data-hay="eastgate covered parking deck columbus oh ohio covered garage">
+        <div class="card__media">
+          <img src="assets/img/parking-deck.webp" alt="Interior of a covered multi level parking deck" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available Today</span>
+          <button class="fav" aria-label="Save Eastgate Covered Parking Deck" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--instant"><svg viewBox="0 0 24 24" class="ic"><path d="M13 3 5.5 13.2h5L11 21l7.5-10.2h-5L13 3Z"/></svg>Instant Book</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Parking</span>
+          <h3 class="card__t">Eastgate Covered Parking Deck</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Columbus, OH</p>
+          <p class="card__meta">Covered <i>&bull;</i> 60 spaces</p>
+          <div class="card__foot">
+            <p class="price"><b>$65</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="container" data-price="310" data-added="3" data-instant="0" data-setting="outdoor"
+               data-hay="harbor point container yard long beach ca california shipping outdoor">
+        <div class="card__media">
+          <img src="assets/img/container-yard.webp" alt="Stacked shipping containers beside a storage facility" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available</span>
+          <button class="fav" aria-label="Save Harbor Point Container Yard" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Container Storage</span>
+          <h3 class="card__t">Harbor Point Container Yard</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Long Beach, CA</p>
+          <p class="card__meta">Outdoor <i>&bull;</i> 5 acres</p>
+          <div class="card__foot">
+            <p class="price"><b>$310</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="self" data-price="45" data-added="2" data-instant="1" data-setting="indoor"
+               data-hay="pinewood self storage units boise id idaho indoor drive up">
+        <div class="card__media">
+          <img src="assets/img/self-storage.webp" alt="Row of orange roller shutter self storage unit doors" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available Today</span>
+          <button class="fav" aria-label="Save Pinewood Self Storage Units" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--instant"><svg viewBox="0 0 24 24" class="ic"><path d="M13 3 5.5 13.2h5L11 21l7.5-10.2h-5L13 3Z"/></svg>Instant Book</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Self Storage</span>
+          <h3 class="card__t">Pinewood Self Storage Units</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Boise, ID</p>
+          <p class="card__meta">Indoor <i>&bull;</i> 200 sq ft</p>
+          <div class="card__foot">
+            <p class="price"><b>$45</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-type="warehouse" data-price="980" data-added="1" data-instant="0" data-setting="indoor"
+               data-hay="northline distribution warehouse reno nv nevada indoor dock">
+        <div class="card__media">
+          <img src="assets/img/storage-units.webp" alt="Row of drive up storage units under an open sky" width="760" height="520" loading="lazy" decoding="async">
+          <span class="pill pill--avail"><i class="dot"></i>Available</span>
+          <button class="fav" aria-label="Save Northline Distribution Warehouse" aria-pressed="false">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.4a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20Z"/></svg>
+          </button>
+          <span class="pill pill--feat"><svg viewBox="0 0 24 24" class="ic"><path d="m12 4 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4Z"/></svg>Featured</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow">Warehouse</span>
+          <h3 class="card__t">Northline Distribution Warehouse</h3>
+          <p class="card__loc"><svg viewBox="0 0 24 24" class="ic"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Reno, NV</p>
+          <p class="card__meta">Indoor <i>&bull;</i> 25,000 sq ft</p>
+          <div class="card__foot">
+            <p class="price"><b>$980</b><span>/month</span></p>
+            <a class="btn btn--brand btn--sm" href="#">View Details <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="empty" id="empty" hidden>
+      <svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <h3>No spaces match those filters</h3>
+      <p>Try a different city, widen your price range, or clear the filters to see all 8 listings.</p>
+      <button class="btn btn--ghost btn--sm" id="resetAll">Clear all filters</button>
+    </div>
+  </div>
+
+  <!-- ============ CTA BANNER ============ -->
+  <div class="wrap">
+    <section class="ctabar" id="cta">
+      <span class="ctabar__ic">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M3.5 10.4 12 4l8.5 6.4V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-9.6Z"/><path d="M12 10.6v5.2M9.4 13.2h5.2"/></svg>
+      </span>
+      <div class="ctabar__tx">
+        <h3>Have unused space?</h3>
+        <p>List your property for free and start earning monthly income.</p>
+      </div>
+      <a class="btn btn--brand ctabar__btn" href="#">List Your Property <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+    </section>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <p class="ft__trust">
+    <svg viewBox="0 0 24 24" class="ic"><path d="M12 3.2 19.2 6v5.6c0 4.4-3 7.6-7.2 9.2-4.2-1.6-7.2-4.8-7.2-9.2V6L12 3.2Z"/><path d="m9 12 2.2 2.2L15.4 10"/></svg>
+    Secure. Trusted. Built for Property Owners.
+  </p>
+  <p class="ft__fine">We use industry leading security to protect your information and payments.</p>
+  <p class="ft__dom">storagetrail.com</p>
+</footer>
+
+<!-- ============ FILTERS SHEET ============ -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet__scrim" id="sheetScrim"></div>
+  <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet__grab"></div>
+    <div class="sheet__head">
+      <h2 id="sheetTitle">Filters</h2>
+      <button class="sheet__x" id="sheetX" aria-label="Close filters">&times;</button>
+    </div>
+
+    <div class="fgroup">
+      <label class="flabel" for="maxPrice">Maximum monthly price</label>
+      <output class="fout" id="maxPriceOut">$1,000</output>
+      <input type="range" id="maxPrice" min="30" max="1000" step="5" value="1000">
+      <div class="fscale"><span>$30</span><span>$1,000+</span></div>
+    </div>
+
+    <div class="fgroup">
+      <span class="flabel">Setting</span>
+      <div class="segs" id="settingSegs">
+        <button class="seg is-on" data-setting="any">Any</button>
+        <button class="seg" data-setting="indoor">Indoor</button>
+        <button class="seg" data-setting="outdoor">Outdoor</button>
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <label class="switch">
+        <input type="checkbox" id="instantOnly">
+        <span class="switch__track"><span class="switch__knob"></span></span>
+        <span class="switch__tx"><b>Instant Book only</b><i>Skip the request step and reserve now</i></span>
+      </label>
+    </div>
+
+    <div class="sheet__foot">
+      <button class="btn btn--ghost" id="sheetReset">Reset</button>
+      <button class="btn btn--brand" id="sheetApply">Show <span id="applyCount">8</span> spaces</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
